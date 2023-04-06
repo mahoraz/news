@@ -1,5 +1,7 @@
 {
   "scripts": {
+    "build": "tsc",
+    "serve": "tsc && node dist/server.js",
     "start": "nodemon src/server.ts"
   },
   "dependencies": {
@@ -8,8 +10,11 @@
     "@types/node": "^18.15.11",
     "config": "^3.3.9",
     "express": "^4.18.2",
+    "mysql": "^2.18.1",
     "nodemon": "^2.0.22",
+    "reflect-metadata": "^0.1.13",
     "ts-node": "^10.9.1",
+    "typeorm": "^0.3.12",
     "typescript": "^5.0.2"
   }
 }

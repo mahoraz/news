@@ -7,6 +7,6 @@ yarn-error.log*
 lerna-debug.log*
 
 config/*local.json
-build
+dist
 
 node_modules
