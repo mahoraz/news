@@ -1,6 +1,7 @@
 import { DataSource } from "typeorm";
 import { config } from "./config";
 import { Article } from "./entities/Article";
+import { Author } from "./entities/Author";
 
 // andmebaasiühenduse konfguratsioon
 const defaultDataSource = new DataSource({
@@ -10,7 +11,7 @@ const defaultDataSource = new DataSource({
   username: config.database.username,
   password: config.database.password,
   database: config.database.db,
-  entities: [Article],
+  entities: [Article, Author],
   synchronize: true,
 });
 

@@ -1,4 +1,5 @@
-import { PrimaryGeneratedColumn, Column, Entity, BaseEntity } from "typeorm";
+import { PrimaryGeneratedColumn, Column, Entity, BaseEntity, ManyToOne, CreateDateColumn, UpdateDateColumn } from "typeorm";
+import { Author } from "./Author";
 
 // Entity dekoraator ütleb TypoeORMil kuidas sellest tabel teha ja millised väljad on olemas
 @Entity()
@@ -12,4 +13,18 @@ export class Article extends BaseEntity{
 
     @Column({type: "text"})
     body!: string;
+
+    @Column({type: "number"})
+    authorId!: number;
+
+    @CreateDateColumn()
+    createdAt!: Date;
+
+    @UpdateDateColumn()
+    updatedAt!: Date;
+
+    @ManyToOne((type) => Author, (author)=> author.articles, {eager: true})
+    author!: Author;
 }
+
+
