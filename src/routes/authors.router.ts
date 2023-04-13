@@ -140,7 +140,6 @@ try {
 router.delete("/:id", async(req, res) => {
     try {
         const { id } = req.params;
-        const { title, body } = req.body;
     
         const author = await defaultDataSource
         .getRepository(Author)

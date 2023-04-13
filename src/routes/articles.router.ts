@@ -137,7 +137,6 @@ try {
 router.delete("/:id", async(req, res) => {
     try {
         const { id } = req.params;
-        const { title, body } = req.body;
     
         const article = await defaultDataSource
         .getRepository(Article)
